@@ -51,7 +51,7 @@
   .cart-count{background:var(--amber);color:#0D1A1B;font-family:var(--mono);font-weight:700;font-size:12px;min-width:20px;height:20px;border-radius:99px;display:grid;place-items:center;padding:0 5px}
   .hero{background:var(--ink);color:#fff;padding:72px 0 88px;position:relative;overflow:hidden}
   .hero::before{content:"";position:absolute;inset:0;background:radial-gradient(820px 400px at 82% -8%,rgba(15,169,140,.30),transparent 60%),radial-gradient(600px 340px at 5% 115%,rgba(255,178,62,.12),transparent 60%);pointer-events:none}
-  .hero .wrap{position:relative;display:grid;grid-template-columns:1.1fr .9fr;gap:50px;align-items:center}
+  .hero .wrap{position:relative;max-width:680px}
   .eyebrow{display:inline-flex;align-items:center;gap:9px;font-family:var(--mono);font-size:12px;letter-spacing:1.4px;text-transform:uppercase;color:#9DBCB7;border:1px solid var(--border-dark);padding:7px 13px;border-radius:99px;margin-bottom:22px}
   .hero h1{font-weight:700;font-size:clamp(33px,4.8vw,54px);line-height:1.05;margin-bottom:18px}
   .hero h1 .hl{color:var(--amber)}
@@ -62,20 +62,6 @@
   .hstat .n{font-family:var(--display);font-weight:700;font-size:26px;color:#fff}
   .hstat .n em{color:var(--teal);font-style:normal}
   .hstat .l{font-size:13px;color:#9DB1AF}
-  .tracker{background:linear-gradient(165deg,var(--ink-2),var(--ink-3));border:1px solid var(--border-dark);border-radius:20px;padding:24px;box-shadow:0 34px 70px rgba(0,0,0,.5)}
-  .tracker-top{display:flex;justify-content:space-between;align-items:center;margin-bottom:20px}
-  .tracker-top .lbl{font-family:var(--mono);font-size:11px;letter-spacing:1px;color:#8FA3A1}
-  .tracker-top .code{font-family:var(--mono);font-weight:700;font-size:13px;color:var(--amber)}
-  .tline{position:relative;padding-left:34px}
-  .tstep{position:relative;padding-bottom:20px}
-  .tstep:last-child{padding-bottom:0}
-  .tstep::before{content:"";position:absolute;left:-34px;top:2px;width:18px;height:18px;border-radius:50%;border:2px solid #3a5a5b;background:var(--ink-2)}
-  .tstep::after{content:"";position:absolute;left:-26px;top:20px;bottom:0;width:2px;background:#2b4748}
-  .tstep:last-child::after{display:none}
-  .tstep.done::before{background:var(--teal);border-color:var(--teal)}
-  .tstep.active::before{background:var(--amber);border-color:var(--amber);box-shadow:0 0 0 5px rgba(255,178,62,.18)}
-  .tstep h4{font-size:14.5px;font-weight:600;color:#fff}
-  .tstep span{font-size:12.5px;color:#90a4a2;font-family:var(--mono)}
   section{position:relative}
   .pad{padding:84px 0}
   .shead{max-width:640px;margin:0 auto 48px;text-align:center}
@@ -165,6 +151,15 @@
   .ship-meta .mv.mono{font-family:var(--mono);color:var(--teal)}
   .steps-mini{margin-top:18px;font-size:12.5px;color:#9DB1AF;line-height:1.8}
   .steps-mini b{color:#fff}
+  .pay-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:22px;align-items:start}
+  .pay-methods{display:flex;flex-direction:column;gap:14px}
+  .pay-method{display:flex;gap:14px;align-items:flex-start;background:var(--surface);border:1px solid var(--border);border-radius:14px;padding:18px;cursor:pointer;transition:border-color .2s,background .2s}
+  .pay-method:hover{border-color:var(--teal)}
+  .pay-method.sel{border-color:var(--teal);background:var(--teal-soft)}
+  .pm-ic{width:42px;height:42px;flex:none;border-radius:11px;background:var(--teal-soft);display:grid;place-items:center;color:var(--teal-deep)}
+  .pay-method.sel .pm-ic{background:var(--teal);color:#fff}
+  .pm-t{font-weight:600;font-size:15px}
+  .pm-s{font-size:13px;color:var(--muted);margin-top:3px}
   .reviews{padding:84px 0}
   .rev-head{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:20px;margin-bottom:36px}
   .gscore{display:flex;align-items:center;gap:18px;background:var(--surface);border:1px solid var(--border);border-radius:18px;padding:20px 26px}
@@ -213,11 +208,11 @@
   .toast .dot{width:8px;height:8px;border-radius:50%;background:var(--teal)}
   @media(max-width:920px){
     .menu{display:none}
-    .hero .wrap{grid-template-columns:1fr;gap:38px}
     .steps{grid-template-columns:1fr 1fr}
     .builder{grid-template-columns:1fr}
     .cart-box{position:static}
     .ship-card{grid-template-columns:1fr}
+    .pay-grid{grid-template-columns:1fr}
     .rev-grid{grid-template-columns:1fr 1fr}
     .trust-grid{grid-template-columns:1fr 1fr}
     .c-panel{grid-template-columns:1fr}
@@ -246,6 +241,7 @@
       <li><a href="#nasil">Nasıl Çalışır</a></li>
       <li><a href="#fiyatlar">Fiyat Listesi</a></li>
       <li><a href="#gonder">Kargoyla Gönder</a></li>
+      <li><a href="#odeme">Ödeme</a></li>
       <li><a href="#yorumlar">Yorumlar</a></li>
       <li><a href="#iletisim">İletişim</a></li>
     </ul>
@@ -270,15 +266,6 @@
         <div class="hstat"><div class="n"><em>0</em>₺</div><div class="l">Arıza tespiti</div></div>
         <div class="hstat"><div class="n"><em>3</em> Ay</div><div class="l">Hizmet garantisi</div></div>
         <div class="hstat"><div class="n"><em>81</em> İl</div><div class="l">Kargo ile hizmet</div></div>
-      </div>
-    </div>
-    <div class="tracker">
-      <div class="tracker-top"><span class="lbl">TAKİP · CANLI ÖRNEK</span><span class="code">#TRG-260618-K4P9</span></div>
-      <div class="tline">
-        <div class="tstep done"><h4>Sipariş alındı</h4><span>10:24 · onaylandı</span></div>
-        <div class="tstep done"><h4>Kargo teslim alındı</h4><span>Yurtiçi · yola çıktı</span></div>
-        <div class="tstep active"><h4>Tamir & test ediliyor</h4><span>ekran değişimi · 45 dk</span></div>
-        <div class="tstep"><h4>Sana geri gönderiliyor</h4><span>kapına teslim</span></div>
       </div>
     </div>
   </div>
@@ -365,12 +352,46 @@
           <div class="ship-meta">
             <div class="mrow"><span class="mk">Kargo firması</span><span class="mv" id="mFirm">—</span></div>
             <div class="mrow"><span class="mk">Gönderim ücreti</span><span class="mv" style="color:#5fe6c8">Ücretsiz (anlaşmalı)</span></div>
-            <div class="mrow"><span class="mk">Tahmini takip no</span><span class="mv mono" id="mTrack">—</span></div>
             <div class="mrow"><span class="mk">Sepet tutarı</span><span class="mv" id="mTotal">0 ₺</span></div>
           </div>
-          <div class="steps-mini"><b>Sırada:</b> Telefonunu küçük bir kutuya sağlam şekilde yerleştir → en yakın <b id="mFirm2">—</b> şubesine git → <b>gönderici kodunu</b> söyle → ücret ödemeden gönder. Telefonun bize ulaşınca SMS ile bilgilendirilirsin.</div>
+          <div class="steps-mini"><b>Sırada:</b> Telefonunu sağlam bir kutuya paketle → <b id="mFirm2">—</b> şubesine bırak ya da kapından alım talep et → <b>gönderici kodunu</b> söyle → ücret ödemeden gönder. Kargo sana orada kendi takip numarasını verir; telefon bize ulaşınca WhatsApp'tan haber veririz.</div>
           <a href="https://wa.me/905413556278" class="btn btn-wa full-w" style="margin-top:18px">Kodu WhatsApp'tan da Gönder</a>
         </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="pad" id="odeme">
+  <div class="wrap">
+    <div class="shead">
+      <span class="kicker"><span class="bars" style="height:13px"><span></span><span></span><span></span><span></span></span> Ödeme</span>
+      <h2>Ödemeni tamamla</h2>
+      <p>Tamir bitmeden ücret alınmaz. Telefonun sana ulaştığında ya da öncesinde, sana uygun yöntemle ödeyebilirsin.</p>
+    </div>
+    <div class="pay-grid">
+      <div class="pay-methods">
+        <div class="pay-method" data-method="kapida" onclick="selectPayMethod('kapida',this)">
+          <div class="pm-ic"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M3 8 12 3l9 5v8l-9 5-9-5V8Z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><path d="m9 12 3 1.5L15 12" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+          <div><div class="pm-t">Kapıda Ödeme</div><div class="pm-s">Telefonun sana ulaştığında kargo görevlisine nakit ya da kartla öde.</div></div>
+        </div>
+        <div class="pay-method" data-method="havale" onclick="selectPayMethod('havale',this)">
+          <div class="pm-ic"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><rect x="3" y="6" width="18" height="13" rx="2" stroke="currentColor" stroke-width="1.8"/><path d="M3 10h18" stroke="currentColor" stroke-width="1.8"/></svg></div>
+          <div><div class="pm-t">Havale / EFT</div><div class="pm-s">IBAN: [IBAN numaranız]<br>Alıcı: [Hesap sahibi adı]</div></div>
+        </div>
+        <div class="pay-method" data-method="link" onclick="selectPayMethod('link',this)">
+          <div class="pm-ic"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M5 4h3l2 5-2 1.5a12 12 0 0 0 5.5 5.5L20 14l5 2v3a18 18 0 0 1-17-17Z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round" transform="translate(-2 0)"/></svg></div>
+          <div><div class="pm-t">Kartla Uzaktan Öde</div><div class="pm-s">WhatsApp'tan istersen sana güvenli bir ödeme linki gönderelim.</div></div>
+        </div>
+      </div>
+      <div class="panel cart-box">
+        <h3>Sipariş özeti</h3>
+        <p class="sub">Fiyat listesinden eklediğin tamirler.</p>
+        <div class="cart-items" id="paySummaryItems"><div class="empty-hint">Sepetin boş — önce fiyat listesinden tamir seç.</div></div>
+        <div class="total-row"><span class="tl">Ödenecek tutar</span><span class="tv" id="payTotal">0 ₺</span></div>
+        <p class="cart-note">* Kart bilgisi bu sayfadan alınmaz. Talebini gönderince ödemeni WhatsApp veya telefon üzerinden birlikte tamamlarız.</p>
+        <button class="btn btn-wa full-w" onclick="requestPayment()">Ödeme Talebini WhatsApp'tan Gönder</button>
+        <a href="tel:+905413556278" class="btn btn-line full-w" style="margin-top:10px">Bizi Ara</a>
       </div>
     </div>
   </div>
@@ -426,7 +447,7 @@
         <div class="cline"><div class="ic"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="1.8"/><path d="M12 7v5l3 2" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div><div><div class="lbl">Çalışma Saatleri</div><div class="val">Pzt–Cmt 09:00 – 19:00 · Pazar kapalı</div></div></div>
         <div class="cbtns"><a href="tel:+905413556278" class="btn btn-primary">Hemen Ara</a><a href="https://wa.me/905413556278" class="btn btn-wa">WhatsApp</a></div>
       </div>
-      <div class="c-map"><iframe title="TREND GSM konumu" loading="lazy" referrerpolicy="no-referrer-when-downgrade" src="https://www.google.com/maps?q=TREND+GSM+CEP+TELEFONU+Etimesgut+Ankara&output=embed"></iframe></div>
+      <div class="c-map"><iframe title="TREND GSM konumu" loading="lazy" referrerpolicy="no-referrer-when-downgrade" src="https://www.google.com/maps?q=TREND+GSM+CEP+TELEFONU+Istasyon+Mahallesi+2309+Sokak+Etimesgut+Is+Merkezi+No+2E+06930+Etimesgut+Ankara&output=embed"></iframe></div>
     </div>
   </div>
 </section>
@@ -460,7 +481,7 @@
   };
   const FIRMS=[["Yurtiçi Kargo","YK"],["Aras Kargo","AK"],["MNG Kargo","MNG"],["PTT Kargo","PTT"],["Sürat Kargo","SK"],["Trendyol Express","TEX"]];
   const tl=n=>n.toLocaleString('tr-TR')+' ₺';
-  let selBrand=null,cart=[],selFirm=null,shipOn=false,currentCode=null;
+  let selBrand=null,cart=[],selFirm=null,shipOn=false,currentCode=null,selPayMethod=null;
   let PRICES={},BRAND_ORDER=[],usdToTry=null;
 
   function parseCSV(text){
@@ -541,12 +562,30 @@
   function renderRepairs(){const model=document.getElementById('modelSelect').value;const ops=PRICES[selBrand]&&PRICES[selBrand][model];const box=document.getElementById('repairList');if(!ops){box.innerHTML='<div class="empty-hint">Model seç.</div>';return;}box.innerHTML='';Object.keys(ops).forEach(key=>{const meta=REPAIR_META[key];if(!meta)return;const[name,desc]=meta;const price=priceTRY(ops[key]);const row=document.createElement('div');row.className='repair-row';row.innerHTML='<div class="rl">'+name+'<small>'+desc+'</small></div><div class="rr"><span class="price">'+tl(price)+'</span><button class="btn btn-primary btn-sm">+ Sepete</button></div>';row.querySelector('button').onclick=()=>addToCart(selBrand,model,key,name,price);box.appendChild(row);});}
   function addToCart(brand,model,key,name,price){const id=Date.now()+''+Math.random().toString(36).slice(2,5);cart.push({id,brand,model,key,name,price});renderCart();toast(model+' · '+name+' eklendi');}
   function removeItem(id){cart=cart.filter(i=>i.id!==id);renderCart();}
-  function renderCart(){const box=document.getElementById('cartItems');const count=cart.length;document.getElementById('navCount').textContent=count;if(!count){box.innerHTML='<div class="empty-hint">Sepetin henüz boş.</div>';}else{box.innerHTML='';cart.forEach(i=>{const el=document.createElement('div');el.className='cart-item';el.innerHTML='<div class="ci-l">'+i.brand+' '+i.model+'<small>'+i.name+'</small></div><div class="ci-r"><span class="ci-p">'+tl(i.price)+'</span><button class="x-btn" aria-label="Kaldır">✕</button></div>';el.querySelector('.x-btn').onclick=()=>removeItem(i.id);box.appendChild(el);});}const total=cart.reduce((s,i)=>s+i.price,0);document.getElementById('cartTotal').textContent=tl(total);document.getElementById('mTotal').textContent=tl(total);}
+  function renderCart(){const box=document.getElementById('cartItems');const count=cart.length;document.getElementById('navCount').textContent=count;if(!count){box.innerHTML='<div class="empty-hint">Sepetin henüz boş.</div>';}else{box.innerHTML='';cart.forEach(i=>{const el=document.createElement('div');el.className='cart-item';el.innerHTML='<div class="ci-l">'+i.brand+' '+i.model+'<small>'+i.name+'</small></div><div class="ci-r"><span class="ci-p">'+tl(i.price)+'</span><button class="x-btn" aria-label="Kaldır">✕</button></div>';el.querySelector('.x-btn').onclick=()=>removeItem(i.id);box.appendChild(el);});}const total=cart.reduce((s,i)=>s+i.price,0);document.getElementById('cartTotal').textContent=tl(total);document.getElementById('mTotal').textContent=tl(total);renderPaySummary(total);}
+
+  function renderPaySummary(total){
+    const box=document.getElementById('paySummaryItems');
+    if(!cart.length){box.innerHTML='<div class="empty-hint">Sepetin boş — önce fiyat listesinden tamir seç.</div>';}
+    else{box.innerHTML='';cart.forEach(i=>{const el=document.createElement('div');el.className='cart-item';el.innerHTML='<div class="ci-l">'+i.brand+' '+i.model+'<small>'+i.name+'</small></div><div class="ci-r"><span class="ci-p">'+tl(i.price)+'</span></div>';box.appendChild(el);});}
+    document.getElementById('payTotal').textContent=tl(total);
+  }
+  function selectPayMethod(method,el){selPayMethod=method;document.querySelectorAll('.pay-method').forEach(p=>p.classList.remove('sel'));el.classList.add('sel');}
+  function requestPayment(){
+    if(!cart.length){toast('Önce sepete bir tamir ekle');return;}
+    if(!selPayMethod){toast('Bir ödeme yöntemi seç');return;}
+    const methodLabel={kapida:'Kapıda Ödeme',havale:'Havale / EFT',link:'Kartla uzaktan ödeme (link istiyorum)'}[selPayMethod];
+    const total=cart.reduce((s,i)=>s+i.price,0);
+    const lines=cart.map(i=>'- '+i.brand+' '+i.model+' / '+i.name+': '+tl(i.price));
+    let msg='Merhaba, ödeme talebim var:\n'+lines.join('\n')+'\n\nToplam: '+tl(total)+'\nÖdeme yöntemi: '+methodLabel;
+    if(currentCode)msg+='\nGönderim kodu: '+currentCode;
+    window.open('https://wa.me/905413556278?text='+encodeURIComponent(msg),'_blank');
+  }
 
   const firmsBox=document.getElementById('firms');
   FIRMS.forEach(([name,code])=>{const el=document.createElement('div');el.className='firm';el.innerHTML='<div class="fn">'+name+'</div><div class="fd">'+code+'</div>';el.onclick=()=>{if(!shipOn)return;selFirm=name;document.querySelectorAll('#firms .firm').forEach(f=>f.classList.remove('sel'));el.classList.add('sel');};firmsBox.appendChild(el);});
   function toggleShip(){shipOn=!shipOn;document.getElementById('shipToggle').classList.toggle('on',shipOn);document.getElementById('firmWrap').classList.toggle('disabled',!shipOn);}
-  function generateCode(){if(!shipOn){toast('Önce "Kargoyla göndereceğim" seçeneğini işaretle');return;}if(!cart.length){toast('Önce sepete bir tamir ekle');return;}if(!selFirm){toast('Bir kargo firması seç');return;}const d=new Date();const p=n=>String(n).padStart(2,'0');const ymd=String(d.getFullYear()).slice(2)+p(d.getMonth()+1)+p(d.getDate());const rnd=Math.random().toString(36).slice(2,6).toUpperCase();currentCode='TRG-'+ymd+'-'+rnd;const track=Math.floor(100000000+Math.random()*899999999);document.getElementById('codeBig').textContent=currentCode;document.getElementById('mFirm').textContent=selFirm;document.getElementById('mFirm2').textContent=selFirm;document.getElementById('mTrack').textContent='~'+track;document.getElementById('resultEmpty').style.display='none';document.getElementById('codeCard').classList.add('show');toast('Kargo kodun oluşturuldu ✓');document.getElementById('codeCard').scrollIntoView({behavior:'smooth',block:'center'});}
+  function generateCode(){if(!shipOn){toast('Önce "Kargoyla göndereceğim" seçeneğini işaretle');return;}if(!cart.length){toast('Önce sepete bir tamir ekle');return;}if(!selFirm){toast('Bir kargo firması seç');return;}const d=new Date();const p=n=>String(n).padStart(2,'0');const ymd=String(d.getFullYear()).slice(2)+p(d.getMonth()+1)+p(d.getDate());const rnd=Math.random().toString(36).slice(2,6).toUpperCase();currentCode='TRG-'+ymd+'-'+rnd;document.getElementById('codeBig').textContent=currentCode;document.getElementById('mFirm').textContent=selFirm;document.getElementById('mFirm2').textContent=selFirm;document.getElementById('resultEmpty').style.display='none';document.getElementById('codeCard').classList.add('show');toast('Kargo kodun oluşturuldu ✓');document.getElementById('codeCard').scrollIntoView({behavior:'smooth',block:'center'});}
   function copyCode(){if(!currentCode)return;if(navigator.clipboard){navigator.clipboard.writeText(currentCode).then(()=>toast('Kod kopyalandı: '+currentCode)).catch(()=>toast(currentCode));}else{toast(currentCode);}}
 
   const REV=[["Mehmet A.","ekran değişimi","2 hafta önce",5,"Kargoyla gönderdim, 3 günde tamir olup geri geldi. Ekran orijinal gibi, çok memnunum.","#0FA98C"],["Zeynep K.","batarya","1 ay önce",5,"İletişim çok hızlıydı, WhatsApp'tan her aşamada bilgi verdiler. Güvenle tavsiye ederim.","#FFB23E"],["Burak T.","su hasarı","3 hafta önce",5,"Suya düşen telefonumu kurtardılar. Fiyat tespiti baştan netti, sürpriz çıkmadı.","#4285F4"],["Ayşe D.","şarj soketi","1 hafta önce",5,"Ankara dışındanım, kapımdan aldılar kapıma getirdiler. Harika hizmet.","#EA4335"],["Caner Y.","arka cam","2 ay önce",4,"İşçilik temiz. Biraz beklesem de sonuç gayet iyi oldu, garanti veriyorlar.","#34A853"],["Elif S.","kamera","5 gün önce",5,"Kamera değişimi sonrası fotoğraflar yine net. Güleryüzlü ve ilgililer.","#9C27B0"]];
