@@ -306,6 +306,7 @@
       <span class="kicker" style="color:var(--teal)"><span class="bars" style="height:13px"><span></span><span></span><span></span><span></span></span> Şeffaf Fiyatlandırma</span>
       <h2>Fiyat listesi & sepet</h2>
       <p>Modelini seç, arızanı işaretle, fiyatı gör. Sürpriz yok.</p>
+      <p id="kurInfo" style="font-family:var(--mono);font-size:12px;color:#6f8584;margin-top:6px">Güncel kur yükleniyor…</p>
     </div>
     <div class="builder">
       <div class="panel">
@@ -314,7 +315,7 @@
         <div class="field-label">Marka</div>
         <div class="brand-chips" id="brandChips"></div>
         <div class="field-label">Model</div>
-        <select id="modelSelect" onchange="renderRepairs()"><option>Önce marka seç</option></select>
+        <select id="modelSelect" onchange="renderRepairs()"><option>Yükleniyor…</option></select>
         <div class="field-label">Tamir seçenekleri</div>
         <div class="repairs" id="repairList"><div class="empty-hint">Fiyatları görmek için marka ve model seç.</div></div>
       </div>
@@ -389,7 +390,7 @@
     </div>
     <div class="rev-grid" id="revGrid"></div>
     <div style="text-align:center;margin-top:30px">
-      <a class="btn btn-line" target="_blank" rel="noopener" href="https://maps.app.goo.gl/LfM4BqHD9hRKfhWdA">Tüm yorumları Google Haritalar'da gör →</a>
+      <a class="btn btn-line" target="_blank" rel="noopener" href="https://maps.app.goo.gl/NqFehKTkDV8xSHCE8?g_st=ac">Tüm yorumları Google Haritalar'da gör →</a>
     </div>
   </div>
 </section>
@@ -445,24 +446,99 @@
 <div class="toast" id="toast"><span class="dot"></span><span id="toastMsg">Eklendi</span></div>
 
 <script>
-  const MODELS={
-    "iPhone":{"iPhone 11":2900,"iPhone 12":3400,"iPhone 13":4200,"iPhone 14":5200,"iPhone 15":6500,"iPhone XR":2600},
-    "Samsung":{"Galaxy S21":4800,"Galaxy S22":5500,"Galaxy S23":6200,"Galaxy A52":2600,"Galaxy A54":3100,"Galaxy A14":1700},
-    "Xiaomi":{"Redmi Note 11":1900,"Redmi Note 12":2200,"Redmi Note 13":2500,"Poco X5":2000,"Mi 11":3200},
-    "Huawei":{"P30":2400,"P40":3000,"Mate 20":2800,"Y9":1500},
-    "Oppo":{"Reno 7":2300,"Reno 8":2700,"A76":1800,"A96":1900},
-    "General Mobile":{"GM 22 Pro":1500,"GM 21 Plus":1300,"GM 20":1100}
+  const PRICES_CSV_URL='data/prices.csv';
+  const RATE_ENDPOINTS=['https://open.er-api.com/v6/latest/USD','https://api.frankfurter.app/latest?from=USD&to=TRY'];
+  const FALLBACK_RATE=34;
+  const ROUND_TO=100;
+  const REPAIR_META={
+    ekran:["Ekran Değişimi","kırık / dokunmuyor"],
+    batarya:["Batarya Değişimi","çabuk bitiyor / şişme"],
+    sarj:["Şarj Soketi","şarj almıyor"],
+    arkaCam:["Arka Cam Değişimi","arka panel kırık"],
+    kamera:["Arka Kamera","bulanık / çalışmıyor"],
+    hoparlor:["Hoparlör / Mikrofon","ses gelmiyor"]
   };
-  const REPAIRS=[["ekran","Ekran Değişimi","kırık / dokunmuyor"],["batarya","Batarya Değişimi","çabuk bitiyor / şişme"],["sarj","Şarj Soketi","şarj almıyor"],["arkaCam","Arka Cam Değişimi","arka panel kırık"],["kamera","Arka Kamera","bulanık / çalışmıyor"],["hoparlor","Hoparlör / Mikrofon","ses gelmiyor"]];
   const FIRMS=[["Yurtiçi Kargo","YK"],["Aras Kargo","AK"],["MNG Kargo","MNG"],["PTT Kargo","PTT"],["Sürat Kargo","SK"],["Trendyol Express","TEX"]];
-  function priceFor(base,key){switch(key){case 'ekran':return base;case 'batarya':return Math.round(base*0.42/10)*10;case 'sarj':return 900;case 'arkaCam':return Math.round(base*0.36/10)*10;case 'kamera':return Math.round(base*0.55/10)*10;case 'hoparlor':return 780;}}
   const tl=n=>n.toLocaleString('tr-TR')+' ₺';
   let selBrand=null,cart=[],selFirm=null,shipOn=false,currentCode=null;
+  let PRICES={},BRAND_ORDER=[],usdToTry=null;
 
-  const brandChips=document.getElementById('brandChips');
-  Object.keys(MODELS).forEach((b,i)=>{const el=document.createElement('button');el.className='chip-btn'+(i===0?' sel':'');el.textContent=b;el.onclick=()=>selectBrand(b,el);brandChips.appendChild(el);});
-  function selectBrand(b,el){selBrand=b;document.querySelectorAll('#brandChips .chip-btn').forEach(c=>c.classList.remove('sel'));el.classList.add('sel');const sel=document.getElementById('modelSelect');sel.innerHTML='';Object.keys(MODELS[b]).forEach(m=>{const o=document.createElement('option');o.value=m;o.textContent=m;sel.appendChild(o);});renderRepairs();}
-  function renderRepairs(){const model=document.getElementById('modelSelect').value;const base=MODELS[selBrand]&&MODELS[selBrand][model];const box=document.getElementById('repairList');if(!base){box.innerHTML='<div class="empty-hint">Model seç.</div>';return;}box.innerHTML='';REPAIRS.forEach(([key,name,desc])=>{const price=priceFor(base,key);const row=document.createElement('div');row.className='repair-row';row.innerHTML='<div class="rl">'+name+'<small>'+desc+'</small></div><div class="rr"><span class="price">'+tl(price)+'</span><button class="btn btn-primary btn-sm">+ Sepete</button></div>';row.querySelector('button').onclick=()=>addToCart(selBrand,model,key,name,price);box.appendChild(row);});}
+  function parseCSV(text){
+    const lines=text.trim().split(/\r?\n/);
+    const header=lines.shift().split(',').map(h=>h.trim());
+    return lines.filter(l=>l.trim()).map(line=>{
+      const cols=line.split(',').map(c=>c.trim());
+      const row={};
+      header.forEach((h,i)=>row[h]=cols[i]);
+      return row;
+    });
+  }
+
+  function buildPriceTable(rows){
+    const table={};
+    const brandOrder=[];
+    rows.forEach(r=>{
+      const brand=r.Marka,model=r.Model,key=r.Islem;
+      if(!REPAIR_META[key])return;
+      if(!table[brand]){table[brand]={};brandOrder.push(brand);}
+      if(!table[brand][model])table[brand][model]={};
+      table[brand][model][key]={
+        parca:parseFloat(r.ParcaFiyatiUSD)||0,
+        iscilik:parseFloat(r.IscilikUSD)||0,
+        kargo:parseFloat(r.KargoUSD)||0
+      };
+    });
+    return {table,brandOrder};
+  }
+
+  function priceTRY(usdParts){
+    const totalUsd=usdParts.parca+usdParts.iscilik+usdParts.kargo;
+    const totalTry=totalUsd*(usdToTry||FALLBACK_RATE);
+    return Math.ceil(totalTry/ROUND_TO)*ROUND_TO;
+  }
+
+  async function fetchRate(){
+    for(const url of RATE_ENDPOINTS){
+      try{
+        const res=await fetch(url);
+        if(!res.ok)continue;
+        const data=await res.json();
+        const rate=data?.rates?.TRY;
+        if(rate)return rate;
+      }catch(e){/* try next endpoint */}
+    }
+    return null;
+  }
+
+  async function initData(){
+    const kurInfo=document.getElementById('kurInfo');
+    const [rateResult,csvResult]=await Promise.allSettled([fetchRate(),fetch(PRICES_CSV_URL).then(r=>r.text())]);
+    usdToTry=rateResult.status==='fulfilled'&&rateResult.value?rateResult.value:FALLBACK_RATE;
+    if(rateResult.status==='fulfilled'&&rateResult.value){
+      kurInfo.textContent='Güncel kur: 1 USD ≈ '+usdToTry.toFixed(2)+' ₺';
+    }else{
+      kurInfo.textContent='Kur bilgisi alınamadı, yaklaşık kur kullanılıyor (1 USD ≈ '+FALLBACK_RATE+' ₺)';
+    }
+    let rows=[];
+    if(csvResult.status==='fulfilled'){
+      rows=parseCSV(csvResult.value);
+    }else{
+      document.getElementById('repairList').innerHTML='<div class="empty-hint">Fiyat listesi yüklenemedi.</div>';
+      return;
+    }
+    const built=buildPriceTable(rows);
+    PRICES=built.table;BRAND_ORDER=built.brandOrder;
+    renderBrandChips();
+  }
+
+  function renderBrandChips(){
+    const brandChips=document.getElementById('brandChips');
+    brandChips.innerHTML='';
+    BRAND_ORDER.forEach((b,i)=>{const el=document.createElement('button');el.className='chip-btn'+(i===0?' sel':'');el.textContent=b;el.onclick=()=>selectBrand(b,el);brandChips.appendChild(el);});
+    if(BRAND_ORDER.length)selectBrand(BRAND_ORDER[0],brandChips.firstChild);
+  }
+  function selectBrand(b,el){selBrand=b;document.querySelectorAll('#brandChips .chip-btn').forEach(c=>c.classList.remove('sel'));el.classList.add('sel');const sel=document.getElementById('modelSelect');sel.innerHTML='';Object.keys(PRICES[b]).forEach(m=>{const o=document.createElement('option');o.value=m;o.textContent=m;sel.appendChild(o);});renderRepairs();}
+  function renderRepairs(){const model=document.getElementById('modelSelect').value;const ops=PRICES[selBrand]&&PRICES[selBrand][model];const box=document.getElementById('repairList');if(!ops){box.innerHTML='<div class="empty-hint">Model seç.</div>';return;}box.innerHTML='';Object.keys(ops).forEach(key=>{const meta=REPAIR_META[key];if(!meta)return;const[name,desc]=meta;const price=priceTRY(ops[key]);const row=document.createElement('div');row.className='repair-row';row.innerHTML='<div class="rl">'+name+'<small>'+desc+'</small></div><div class="rr"><span class="price">'+tl(price)+'</span><button class="btn btn-primary btn-sm">+ Sepete</button></div>';row.querySelector('button').onclick=()=>addToCart(selBrand,model,key,name,price);box.appendChild(row);});}
   function addToCart(brand,model,key,name,price){const id=Date.now()+''+Math.random().toString(36).slice(2,5);cart.push({id,brand,model,key,name,price});renderCart();toast(model+' · '+name+' eklendi');}
   function removeItem(id){cart=cart.filter(i=>i.id!==id);renderCart();}
   function renderCart(){const box=document.getElementById('cartItems');const count=cart.length;document.getElementById('navCount').textContent=count;if(!count){box.innerHTML='<div class="empty-hint">Sepetin henüz boş.</div>';}else{box.innerHTML='';cart.forEach(i=>{const el=document.createElement('div');el.className='cart-item';el.innerHTML='<div class="ci-l">'+i.brand+' '+i.model+'<small>'+i.name+'</small></div><div class="ci-r"><span class="ci-p">'+tl(i.price)+'</span><button class="x-btn" aria-label="Kaldır">✕</button></div>';el.querySelector('.x-btn').onclick=()=>removeItem(i.id);box.appendChild(el);});}const total=cart.reduce((s,i)=>s+i.price,0);document.getElementById('cartTotal').textContent=tl(total);document.getElementById('mTotal').textContent=tl(total);}
@@ -482,8 +558,8 @@
   let toastTimer;
   function toast(msg){const t=document.getElementById('toast');document.getElementById('toastMsg').textContent=msg;t.classList.add('show');clearTimeout(toastTimer);toastTimer=setTimeout(()=>t.classList.remove('show'),2600);}
 
-  selectBrand('iPhone',document.querySelector('#brandChips .chip-btn'));
   renderCart();
+  initData();
 </script>
 </body>
 </html>
