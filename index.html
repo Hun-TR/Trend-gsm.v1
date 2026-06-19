@@ -5,6 +5,12 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>TREND GSM · Kargoyla Telefon Tamiri · Türkiye Geneli</title>
 <meta name="description" content="Telefonunu kargola, biz tamir edip geri gönderelim. Orijinal parça, garanti ve anlaşmalı ücretsiz kargo ile Türkiye'nin her yerinden akıllı telefon teknik servisi." />
+<meta property="og:title" content="TREND GSM · Kargoyla Telefon Tamiri" />
+<meta property="og:description" content="Telefonunu kargola, biz tamir edip geri gönderelim. Orijinal parça, 3 ay garanti, anlaşmalı ücretsiz kargo." />
+<meta property="og:type" content="website" />
+<meta property="og:locale" content="tr_TR" />
+<meta name="theme-color" content="#0D1A1B" />
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Crect width='24' height='24' rx='6' fill='%230D1A1B'/%3E%3Crect x='4' y='12' width='3' height='7' rx='1' fill='%230FA98C'/%3E%3Crect x='9' y='9' width='3' height='10' rx='1' fill='%230FA98C'/%3E%3Crect x='14' y='6' width='3' height='13' rx='1' fill='%230FA98C'/%3E%3Crect x='19' y='3' width='3' height='16' rx='1' fill='%23FFB23E'/%3E%3C/svg%3E" />
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet" />
@@ -51,18 +57,18 @@
   .cart-count{background:var(--amber);color:#0D1A1B;font-family:var(--mono);font-weight:700;font-size:12px;min-width:20px;height:20px;border-radius:99px;display:grid;place-items:center;padding:0 5px}
   .hero{background:var(--ink);color:#fff;padding:72px 0 88px;position:relative;overflow:hidden}
   .hero::before{content:"";position:absolute;inset:0;background:radial-gradient(820px 400px at 82% -8%,rgba(15,169,140,.30),transparent 60%),radial-gradient(600px 340px at 5% 115%,rgba(255,178,62,.12),transparent 60%);pointer-events:none}
-  .hero .wrap{position:relative;max-width:680px}
+  .hero .wrap{position:relative;max-width:760px;margin:0 auto;text-align:center}
   .eyebrow{display:inline-flex;align-items:center;gap:9px;font-family:var(--mono);font-size:12px;letter-spacing:1.4px;text-transform:uppercase;color:#9DBCB7;border:1px solid var(--border-dark);padding:7px 13px;border-radius:99px;margin-bottom:22px}
   .hero h1{font-weight:700;font-size:clamp(33px,4.8vw,54px);line-height:1.05;margin-bottom:18px}
   .hero h1 .hl{color:var(--amber)}
-  .lede{font-size:17.5px;color:#B6C5C3;max-width:44ch;margin-bottom:30px}
-  .hero-cta{display:flex;flex-wrap:wrap;gap:12px;margin-bottom:32px}
+  .lede{font-size:17.5px;color:#B6C5C3;max-width:46ch;margin:0 auto 30px}
+  .hero-cta{display:flex;flex-wrap:wrap;gap:12px;margin-bottom:32px;justify-content:center}
   .hero-cta .btn{padding:14px 24px;font-size:15.5px}
-  .hero-stats{display:flex;gap:30px;flex-wrap:wrap}
+  .hero-stats{display:flex;gap:30px;flex-wrap:wrap;justify-content:center}
   .hstat .n{font-family:var(--display);font-weight:700;font-size:26px;color:#fff}
   .hstat .n em{color:var(--teal);font-style:normal}
   .hstat .l{font-size:13px;color:#9DB1AF}
-  section{position:relative}
+  section{position:relative;scroll-margin-top:86px}
   .pad{padding:84px 0}
   .shead{max-width:640px;margin:0 auto 48px;text-align:center}
   .kicker{font-family:var(--mono);font-size:12px;letter-spacing:1.5px;text-transform:uppercase;color:var(--teal-deep);margin-bottom:12px;display:inline-flex;align-items:center;gap:8px}
@@ -218,6 +224,7 @@
     body{padding-bottom:72px}
     .mobile-bar{display:flex;position:fixed;left:0;right:0;bottom:0;z-index:90;background:var(--ink);border-top:1px solid var(--border-dark);padding:10px 14px;gap:10px}
     .mobile-bar .btn{flex:1}
+    .toast{bottom:84px}
   }
   @media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}html{scroll-behavior:auto}}
 </style>
@@ -235,8 +242,8 @@
       <li><a href="#iletisim">İletişim</a></li>
     </ul>
     <div class="nav-cta">
-      <button class="cart-pill" onclick="scrollToId('gonder')">Sepet <span class="cart-count" id="navCount">0</span></button>
-      <a href="https://wa.me/905413556278" class="btn btn-wa">WhatsApp</a>
+      <button class="cart-pill" onclick="scrollToId('fiyatlar')">Sepet <span class="cart-count" id="navCount">0</span></button>
+      <a href="https://wa.me/905413556278?text=Merhaba%2C%20TREND%20GSM%20web%20sitesinden%20yaz%C4%B1yorum." class="btn btn-wa">WhatsApp</a>
     </div>
   </div>
 </header>
@@ -249,7 +256,7 @@
       <p class="lede">Mağazaya gelmene gerek yok. Modelini seç, fiyatını gör, telefonunu anlaşmalı kargomuzla ücretsiz gönder. Orijinal parça ve garantiyle tamir edip kapına teslim edelim.</p>
       <div class="hero-cta">
         <button class="btn btn-primary" onclick="scrollToId('fiyatlar')">Fiyat Al & Tamir Başlat</button>
-        <a href="https://wa.me/905413556278" class="btn btn-ghost">WhatsApp'tan Sor</a>
+        <a href="https://wa.me/905413556278?text=Merhaba%2C%20telefonumun%20ar%C4%B1zas%C4%B1%20hakk%C4%B1nda%20bilgi%20almak%20istiyorum." class="btn btn-ghost">WhatsApp'tan Sor</a>
       </div>
       <div class="hero-stats">
         <div class="hstat"><div class="n"><em>0</em>₺</div><div class="l">Arıza tespiti</div></div>
@@ -341,7 +348,7 @@
           <div class="ship-meta">
             <div class="mrow"><span class="mk">Kargo firması</span><span class="mv" id="mFirm">—</span></div>
             <div class="mrow"><span class="mk">Gönderim ücreti</span><span class="mv" style="color:#5fe6c8">Ücretsiz (anlaşmalı)</span></div>
-            <div class="mrow"><span class="mk">Sepet tutarı</span><span class="mv" id="mTotal">0 ₺</span></div>
+            <div class="mrow"><span class="mk">Tahmini tutar</span><span class="mv" id="mTotal">0 ₺</span></div>
           </div>
           <div class="steps-mini"><b>Sırada:</b> Telefonunu sağlam bir kutuya paketle → <b id="mFirm2">—</b> şubesine bırak ya da kapından alım talep et → <b>gönderici kodunu</b> söyle → ücret ödemeden gönder. Telefon elimize ulaşınca arızayı inceler, kesin fiyatı sana WhatsApp'tan söyleriz; onay verirsen IBAN ile ödemeni alır, tamiri yapıp geri kargolarız.</div>
         </div>
@@ -398,7 +405,7 @@
         <div class="cline"><div class="ic"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M12 21s7-6.3 7-12a7 7 0 1 0-14 0c0 5.7 7 12 7 12Z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><circle cx="12" cy="9" r="2.4" stroke="currentColor" stroke-width="1.8"/></svg></div><div><div class="lbl">Adres</div><div class="val">İstasyon Mah. 2309. Sk.<br>Etimesgut İş Merkezi No: 2E<br>06930 Etimesgut / Ankara</div></div></div>
         <div class="cline"><div class="ic"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M5 4h3l2 5-2 1.5a12 12 0 0 0 5.5 5.5L20 14l5 2v3a18 18 0 0 1-17-17Z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round" transform="translate(-2 0)"/></svg></div><div><div class="lbl">Telefon / WhatsApp</div><a href="tel:+905413556278" class="val">0 541 355 62 78</a></div></div>
         <div class="cline"><div class="ic"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="1.8"/><path d="M12 7v5l3 2" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div><div><div class="lbl">Çalışma Saatleri</div><div class="val">Pzt–Cmt 09:00 – 19:00 · Pazar kapalı</div></div></div>
-        <div class="cbtns"><a href="tel:+905413556278" class="btn btn-primary">Hemen Ara</a><a href="https://wa.me/905413556278" class="btn btn-wa">WhatsApp</a></div>
+        <div class="cbtns"><a href="tel:+905413556278" class="btn btn-primary">Hemen Ara</a><a href="https://wa.me/905413556278?text=Merhaba%2C%20TREND%20GSM%20web%20sitesinden%20yaz%C4%B1yorum." class="btn btn-wa">WhatsApp</a></div>
       </div>
       <div class="c-map"><iframe title="TREND GSM konumu" loading="lazy" referrerpolicy="no-referrer-when-downgrade" src="https://www.google.com/maps?q=TREND+GSM+CEP+TELEFONU+Istasyon+Mahallesi+2309+Sokak+Etimesgut+Is+Merkezi+No+2E+06930+Etimesgut+Ankara&output=embed"></iframe></div>
     </div>
@@ -414,7 +421,7 @@
 
 <div class="mobile-bar">
   <button class="btn btn-primary" onclick="scrollToId('fiyatlar')">Fiyat Al</button>
-  <a href="https://wa.me/905413556278" class="btn btn-wa">WhatsApp</a>
+  <a href="https://wa.me/905413556278?text=Merhaba%2C%20TREND%20GSM%20web%20sitesinden%20yaz%C4%B1yorum." class="btn btn-wa">WhatsApp</a>
 </div>
 
 <div class="toast" id="toast"><span class="dot"></span><span id="toastMsg">Eklendi</span></div>
