@@ -1,154 +1,454 @@
 Marka,Model,Islem,ParcaFiyatiUSD,IscilikUSD,KargoUSD
-iPhone,iPhone 11,ekran,63,22,3
-iPhone,iPhone 11,batarya,27,7,3
-iPhone,iPhone 11,sarj,20,4,3
-iPhone,iPhone 11,arkaCam,23,6,3
-iPhone,iPhone 11,kamera,35,10,3
-iPhone,iPhone 11,hoparlor,17,4,3
-iPhone,iPhone 12,ekran,74,26,3
-iPhone,iPhone 12,batarya,31,9,3
-iPhone,iPhone 12,sarj,20,4,3
-iPhone,iPhone 12,arkaCam,27,7,3
-iPhone,iPhone 12,kamera,41,13,3
-iPhone,iPhone 12,hoparlor,17,4,3
-iPhone,iPhone 13,ekran,92,32,3
-iPhone,iPhone 13,batarya,38,12,3
-iPhone,iPhone 13,sarj,20,4,3
-iPhone,iPhone 13,arkaCam,33,10,3
-iPhone,iPhone 13,kamera,50,17,3
-iPhone,iPhone 13,hoparlor,17,4,3
-iPhone,iPhone 14,ekran,113,42,3
-iPhone,iPhone 14,batarya,48,15,3
-iPhone,iPhone 14,sarj,20,4,3
-iPhone,iPhone 14,arkaCam,41,13,3
-iPhone,iPhone 14,kamera,62,22,3
-iPhone,iPhone 14,hoparlor,17,4,3
+iPhone,iPhone 17 Pro Max,ekran,268,101,3
+iPhone,iPhone 17 Pro Max,batarya,113,41,3
+iPhone,iPhone 17 Pro Max,sarj,20,4,3
+iPhone,iPhone 17 Pro Max,arkaCam,97,35,3
+iPhone,iPhone 17 Pro Max,kamera,148,55,3
+iPhone,iPhone 17 Pro Max,hoparlor,17,4,3
+iPhone,iPhone 17 Pro,ekran,240,90,3
+iPhone,iPhone 17 Pro,batarya,101,36,3
+iPhone,iPhone 17 Pro,sarj,20,4,3
+iPhone,iPhone 17 Pro,arkaCam,87,31,3
+iPhone,iPhone 17 Pro,kamera,132,48,3
+iPhone,iPhone 17 Pro,hoparlor,17,4,3
+iPhone,iPhone 17,ekran,198,74,3
+iPhone,iPhone 17,batarya,83,29,3
+iPhone,iPhone 17,sarj,20,4,3
+iPhone,iPhone 17,arkaCam,72,25,3
+iPhone,iPhone 17,kamera,109,39,3
+iPhone,iPhone 17,hoparlor,17,4,3
+iPhone,iPhone 16 Pro Max,ekran,228,86,3
+iPhone,iPhone 16 Pro Max,batarya,96,34,3
+iPhone,iPhone 16 Pro Max,sarj,20,4,3
+iPhone,iPhone 16 Pro Max,arkaCam,83,29,3
+iPhone,iPhone 16 Pro Max,kamera,126,46,3
+iPhone,iPhone 16 Pro Max,hoparlor,17,4,3
+iPhone,iPhone 16 Pro,ekran,205,77,3
+iPhone,iPhone 16 Pro,batarya,86,31,3
+iPhone,iPhone 16 Pro,sarj,20,4,3
+iPhone,iPhone 16 Pro,arkaCam,74,26,3
+iPhone,iPhone 16 Pro,kamera,113,41,3
+iPhone,iPhone 16 Pro,hoparlor,17,4,3
+iPhone,iPhone 16 Plus,ekran,182,68,3
+iPhone,iPhone 16 Plus,batarya,76,27,3
+iPhone,iPhone 16 Plus,sarj,20,4,3
+iPhone,iPhone 16 Plus,arkaCam,66,23,3
+iPhone,iPhone 16 Plus,kamera,100,36,3
+iPhone,iPhone 16 Plus,hoparlor,17,4,3
+iPhone,iPhone 16,ekran,168,62,3
+iPhone,iPhone 16,batarya,71,25,3
+iPhone,iPhone 16,sarj,20,4,3
+iPhone,iPhone 16,arkaCam,61,21,3
+iPhone,iPhone 16,kamera,93,33,3
+iPhone,iPhone 16,hoparlor,17,4,3
+iPhone,iPhone 16e,ekran,128,47,3
+iPhone,iPhone 16e,batarya,54,18,3
+iPhone,iPhone 16e,sarj,20,4,3
+iPhone,iPhone 16e,arkaCam,46,15,3
+iPhone,iPhone 16e,kamera,71,25,3
+iPhone,iPhone 16e,hoparlor,17,4,3
+iPhone,iPhone 15 Pro Max,ekran,192,72,3
+iPhone,iPhone 15 Pro Max,batarya,81,29,3
+iPhone,iPhone 15 Pro Max,sarj,20,4,3
+iPhone,iPhone 15 Pro Max,arkaCam,70,24,3
+iPhone,iPhone 15 Pro Max,kamera,106,38,3
+iPhone,iPhone 15 Pro Max,hoparlor,17,4,3
+iPhone,iPhone 15 Pro,ekran,172,64,3
+iPhone,iPhone 15 Pro,batarya,72,25,3
+iPhone,iPhone 15 Pro,sarj,20,4,3
+iPhone,iPhone 15 Pro,arkaCam,62,21,3
+iPhone,iPhone 15 Pro,kamera,95,34,3
+iPhone,iPhone 15 Pro,hoparlor,17,4,3
 iPhone,iPhone 15,ekran,142,52,3
 iPhone,iPhone 15,batarya,60,20,3
 iPhone,iPhone 15,sarj,20,4,3
 iPhone,iPhone 15,arkaCam,51,17,3
 iPhone,iPhone 15,kamera,78,27,3
 iPhone,iPhone 15,hoparlor,17,4,3
+iPhone,iPhone 14,ekran,113,42,3
+iPhone,iPhone 14,batarya,48,15,3
+iPhone,iPhone 14,sarj,20,4,3
+iPhone,iPhone 14,arkaCam,41,13,3
+iPhone,iPhone 14,kamera,62,22,3
+iPhone,iPhone 14,hoparlor,17,4,3
+iPhone,iPhone 13,ekran,92,32,3
+iPhone,iPhone 13,batarya,38,12,3
+iPhone,iPhone 13,sarj,20,4,3
+iPhone,iPhone 13,arkaCam,33,10,3
+iPhone,iPhone 13,kamera,50,17,3
+iPhone,iPhone 13,hoparlor,17,4,3
+iPhone,iPhone 12,ekran,74,26,3
+iPhone,iPhone 12,batarya,31,9,3
+iPhone,iPhone 12,sarj,20,4,3
+iPhone,iPhone 12,arkaCam,27,7,3
+iPhone,iPhone 12,kamera,41,13,3
+iPhone,iPhone 12,hoparlor,17,4,3
+iPhone,iPhone 11,ekran,63,22,3
+iPhone,iPhone 11,batarya,27,7,3
+iPhone,iPhone 11,sarj,20,4,3
+iPhone,iPhone 11,arkaCam,23,6,3
+iPhone,iPhone 11,kamera,35,10,3
+iPhone,iPhone 11,hoparlor,17,4,3
 iPhone,iPhone XR,ekran,57,19,3
 iPhone,iPhone XR,batarya,24,6,3
 iPhone,iPhone XR,sarj,20,4,3
 iPhone,iPhone XR,arkaCam,21,4,3
 iPhone,iPhone XR,kamera,31,9,3
 iPhone,iPhone XR,hoparlor,17,4,3
-Samsung,Galaxy S21,ekran,105,37,3
-Samsung,Galaxy S21,batarya,44,14,3
-Samsung,Galaxy S21,sarj,20,4,3
-Samsung,Galaxy S21,arkaCam,38,11,3
-Samsung,Galaxy S21,kamera,58,19,3
-Samsung,Galaxy S21,hoparlor,17,4,3
-Samsung,Galaxy S22,ekran,120,44,3
-Samsung,Galaxy S22,batarya,50,17,3
-Samsung,Galaxy S22,sarj,20,4,3
-Samsung,Galaxy S22,arkaCam,43,14,3
-Samsung,Galaxy S22,kamera,66,23,3
-Samsung,Galaxy S22,hoparlor,17,4,3
+Samsung,Galaxy S25 Ultra,ekran,248,94,3
+Samsung,Galaxy S25 Ultra,batarya,104,38,3
+Samsung,Galaxy S25 Ultra,sarj,20,4,3
+Samsung,Galaxy S25 Ultra,arkaCam,90,32,3
+Samsung,Galaxy S25 Ultra,kamera,137,50,3
+Samsung,Galaxy S25 Ultra,hoparlor,17,4,3
+Samsung,Galaxy S25,ekran,170,63,3
+Samsung,Galaxy S25,batarya,71,25,3
+Samsung,Galaxy S25,sarj,20,4,3
+Samsung,Galaxy S25,arkaCam,62,21,3
+Samsung,Galaxy S25,kamera,94,34,3
+Samsung,Galaxy S25,hoparlor,17,4,3
+Samsung,Galaxy S24 Ultra,ekran,222,83,3
+Samsung,Galaxy S24 Ultra,batarya,93,33,3
+Samsung,Galaxy S24 Ultra,sarj,20,4,3
+Samsung,Galaxy S24 Ultra,arkaCam,80,28,3
+Samsung,Galaxy S24 Ultra,kamera,122,45,3
+Samsung,Galaxy S24 Ultra,hoparlor,17,4,3
+Samsung,Galaxy S24,ekran,152,56,3
+Samsung,Galaxy S24,batarya,64,22,3
+Samsung,Galaxy S24,sarj,20,4,3
+Samsung,Galaxy S24,arkaCam,55,18,3
+Samsung,Galaxy S24,kamera,84,30,3
+Samsung,Galaxy S24,hoparlor,17,4,3
 Samsung,Galaxy S23,ekran,135,50,3
 Samsung,Galaxy S23,batarya,57,19,3
 Samsung,Galaxy S23,sarj,20,4,3
 Samsung,Galaxy S23,arkaCam,49,16,3
 Samsung,Galaxy S23,kamera,74,26,3
 Samsung,Galaxy S23,hoparlor,17,4,3
-Samsung,Galaxy A52,ekran,57,19,3
-Samsung,Galaxy A52,batarya,24,6,3
-Samsung,Galaxy A52,sarj,20,4,3
-Samsung,Galaxy A52,arkaCam,21,4,3
-Samsung,Galaxy A52,kamera,31,9,3
-Samsung,Galaxy A52,hoparlor,17,4,3
+Samsung,Galaxy S22,ekran,120,44,3
+Samsung,Galaxy S22,batarya,50,17,3
+Samsung,Galaxy S22,sarj,20,4,3
+Samsung,Galaxy S22,arkaCam,43,14,3
+Samsung,Galaxy S22,kamera,66,23,3
+Samsung,Galaxy S22,hoparlor,17,4,3
+Samsung,Galaxy S21,ekran,105,37,3
+Samsung,Galaxy S21,batarya,44,14,3
+Samsung,Galaxy S21,sarj,20,4,3
+Samsung,Galaxy S21,arkaCam,38,11,3
+Samsung,Galaxy S21,kamera,58,19,3
+Samsung,Galaxy S21,hoparlor,17,4,3
+Samsung,Galaxy A56,ekran,84,30,3
+Samsung,Galaxy A56,batarya,35,11,3
+Samsung,Galaxy A56,sarj,20,4,3
+Samsung,Galaxy A56,arkaCam,30,9,3
+Samsung,Galaxy A56,kamera,46,15,3
+Samsung,Galaxy A56,hoparlor,17,4,3
+Samsung,Galaxy A55,ekran,76,27,3
+Samsung,Galaxy A55,batarya,32,9,3
+Samsung,Galaxy A55,sarj,20,4,3
+Samsung,Galaxy A55,arkaCam,28,8,3
+Samsung,Galaxy A55,kamera,42,13,3
+Samsung,Galaxy A55,hoparlor,17,4,3
 Samsung,Galaxy A54,ekran,68,23,3
 Samsung,Galaxy A54,batarya,28,8,3
 Samsung,Galaxy A54,sarj,20,4,3
 Samsung,Galaxy A54,arkaCam,24,7,3
 Samsung,Galaxy A54,kamera,37,12,3
 Samsung,Galaxy A54,hoparlor,17,4,3
+Samsung,Galaxy A52,ekran,57,19,3
+Samsung,Galaxy A52,batarya,24,6,3
+Samsung,Galaxy A52,sarj,20,4,3
+Samsung,Galaxy A52,arkaCam,21,4,3
+Samsung,Galaxy A52,kamera,31,9,3
+Samsung,Galaxy A52,hoparlor,17,4,3
+Samsung,Galaxy A36,ekran,71,25,3
+Samsung,Galaxy A36,batarya,30,9,3
+Samsung,Galaxy A36,sarj,20,4,3
+Samsung,Galaxy A36,arkaCam,26,7,3
+Samsung,Galaxy A36,kamera,39,12,3
+Samsung,Galaxy A36,hoparlor,17,4,3
+Samsung,Galaxy A35,ekran,62,21,3
+Samsung,Galaxy A35,batarya,26,7,3
+Samsung,Galaxy A35,sarj,20,4,3
+Samsung,Galaxy A35,arkaCam,22,6,3
+Samsung,Galaxy A35,kamera,34,10,3
+Samsung,Galaxy A35,hoparlor,17,4,3
+Samsung,Galaxy A25,ekran,52,17,3
+Samsung,Galaxy A25,batarya,22,6,3
+Samsung,Galaxy A25,sarj,20,4,3
+Samsung,Galaxy A25,arkaCam,19,4,3
+Samsung,Galaxy A25,kamera,29,8,3
+Samsung,Galaxy A25,hoparlor,17,4,3
+Samsung,Galaxy A16,ekran,44,14,3
+Samsung,Galaxy A16,batarya,18,4,3
+Samsung,Galaxy A16,sarj,20,4,3
+Samsung,Galaxy A16,arkaCam,16,3,3
+Samsung,Galaxy A16,kamera,24,6,3
+Samsung,Galaxy A16,hoparlor,17,4,3
+Samsung,Galaxy A15,ekran,40,13,3
+Samsung,Galaxy A15,batarya,17,4,3
+Samsung,Galaxy A15,sarj,20,4,3
+Samsung,Galaxy A15,arkaCam,14,2,3
+Samsung,Galaxy A15,kamera,22,6,3
+Samsung,Galaxy A15,hoparlor,17,4,3
 Samsung,Galaxy A14,ekran,37,12,3
 Samsung,Galaxy A14,batarya,15,4,3
 Samsung,Galaxy A14,sarj,20,4,3
 Samsung,Galaxy A14,arkaCam,13,2,3
 Samsung,Galaxy A14,kamera,21,4,3
 Samsung,Galaxy A14,hoparlor,17,4,3
-Xiaomi,Redmi Note 11,ekran,41,14,3
-Xiaomi,Redmi Note 11,batarya,17,4,3
-Xiaomi,Redmi Note 11,sarj,20,4,3
-Xiaomi,Redmi Note 11,arkaCam,15,3,3
-Xiaomi,Redmi Note 11,kamera,23,6,3
-Xiaomi,Redmi Note 11,hoparlor,17,4,3
-Xiaomi,Redmi Note 12,ekran,48,16,3
-Xiaomi,Redmi Note 12,batarya,20,5,3
-Xiaomi,Redmi Note 12,sarj,20,4,3
-Xiaomi,Redmi Note 12,arkaCam,17,4,3
-Xiaomi,Redmi Note 12,kamera,26,8,3
-Xiaomi,Redmi Note 12,hoparlor,17,4,3
-Xiaomi,Redmi Note 13,ekran,55,18,3
-Xiaomi,Redmi Note 13,batarya,23,6,3
-Xiaomi,Redmi Note 13,sarj,20,4,3
-Xiaomi,Redmi Note 13,arkaCam,20,4,3
-Xiaomi,Redmi Note 13,kamera,30,9,3
-Xiaomi,Redmi Note 13,hoparlor,17,4,3
-Xiaomi,Poco X5,ekran,44,14,3
-Xiaomi,Poco X5,batarya,18,4,3
-Xiaomi,Poco X5,sarj,20,4,3
-Xiaomi,Poco X5,arkaCam,16,3,3
-Xiaomi,Poco X5,kamera,24,6,3
-Xiaomi,Poco X5,hoparlor,17,4,3
+Xiaomi,Xiaomi 15,ekran,112,41,3
+Xiaomi,Xiaomi 15,batarya,47,15,3
+Xiaomi,Xiaomi 15,sarj,20,4,3
+Xiaomi,Xiaomi 15,arkaCam,41,13,3
+Xiaomi,Xiaomi 15,kamera,62,21,3
+Xiaomi,Xiaomi 15,hoparlor,17,4,3
+Xiaomi,Xiaomi 14,ekran,98,35,3
+Xiaomi,Xiaomi 14,batarya,41,13,3
+Xiaomi,Xiaomi 14,sarj,20,4,3
+Xiaomi,Xiaomi 14,arkaCam,35,11,3
+Xiaomi,Xiaomi 14,kamera,54,18,3
+Xiaomi,Xiaomi 14,hoparlor,17,4,3
+Xiaomi,Xiaomi 13,ekran,84,30,3
+Xiaomi,Xiaomi 13,batarya,35,11,3
+Xiaomi,Xiaomi 13,sarj,20,4,3
+Xiaomi,Xiaomi 13,arkaCam,30,9,3
+Xiaomi,Xiaomi 13,kamera,46,15,3
+Xiaomi,Xiaomi 13,hoparlor,17,4,3
 Xiaomi,Mi 11,ekran,70,24,3
 Xiaomi,Mi 11,batarya,29,9,3
 Xiaomi,Mi 11,sarj,20,4,3
 Xiaomi,Mi 11,arkaCam,25,7,3
 Xiaomi,Mi 11,kamera,38,12,3
 Xiaomi,Mi 11,hoparlor,17,4,3
-Huawei,P30,ekran,52,18,3
-Huawei,P30,batarya,22,6,3
-Huawei,P30,sarj,20,4,3
-Huawei,P30,arkaCam,19,4,3
-Huawei,P30,kamera,29,8,3
-Huawei,P30,hoparlor,17,4,3
-Huawei,P40,ekran,65,23,3
-Huawei,P40,batarya,27,8,3
-Huawei,P40,sarj,20,4,3
-Huawei,P40,arkaCam,24,6,3
-Huawei,P40,kamera,36,11,3
-Huawei,P40,hoparlor,17,4,3
+Xiaomi,Redmi Note 14 Pro,ekran,74,26,3
+Xiaomi,Redmi Note 14 Pro,batarya,31,9,3
+Xiaomi,Redmi Note 14 Pro,sarj,20,4,3
+Xiaomi,Redmi Note 14 Pro,arkaCam,27,8,3
+Xiaomi,Redmi Note 14 Pro,kamera,41,13,3
+Xiaomi,Redmi Note 14 Pro,hoparlor,17,4,3
+Xiaomi,Redmi Note 14,ekran,62,21,3
+Xiaomi,Redmi Note 14,batarya,26,7,3
+Xiaomi,Redmi Note 14,sarj,20,4,3
+Xiaomi,Redmi Note 14,arkaCam,22,6,3
+Xiaomi,Redmi Note 14,kamera,34,10,3
+Xiaomi,Redmi Note 14,hoparlor,17,4,3
+Xiaomi,Redmi Note 13,ekran,55,18,3
+Xiaomi,Redmi Note 13,batarya,23,6,3
+Xiaomi,Redmi Note 13,sarj,20,4,3
+Xiaomi,Redmi Note 13,arkaCam,20,4,3
+Xiaomi,Redmi Note 13,kamera,30,9,3
+Xiaomi,Redmi Note 13,hoparlor,17,4,3
+Xiaomi,Redmi Note 12,ekran,48,16,3
+Xiaomi,Redmi Note 12,batarya,20,5,3
+Xiaomi,Redmi Note 12,sarj,20,4,3
+Xiaomi,Redmi Note 12,arkaCam,17,4,3
+Xiaomi,Redmi Note 12,kamera,26,8,3
+Xiaomi,Redmi Note 12,hoparlor,17,4,3
+Xiaomi,Redmi Note 11,ekran,41,14,3
+Xiaomi,Redmi Note 11,batarya,17,4,3
+Xiaomi,Redmi Note 11,sarj,20,4,3
+Xiaomi,Redmi Note 11,arkaCam,15,3,3
+Xiaomi,Redmi Note 11,kamera,23,6,3
+Xiaomi,Redmi Note 11,hoparlor,17,4,3
+Xiaomi,Poco X7,ekran,57,19,3
+Xiaomi,Poco X7,batarya,24,6,3
+Xiaomi,Poco X7,sarj,20,4,3
+Xiaomi,Poco X7,arkaCam,21,5,3
+Xiaomi,Poco X7,kamera,31,9,3
+Xiaomi,Poco X7,hoparlor,17,4,3
+Xiaomi,Poco X6,ekran,50,16,3
+Xiaomi,Poco X6,batarya,21,5,3
+Xiaomi,Poco X6,sarj,20,4,3
+Xiaomi,Poco X6,arkaCam,18,4,3
+Xiaomi,Poco X6,kamera,28,8,3
+Xiaomi,Poco X6,hoparlor,17,4,3
+Xiaomi,Poco X5,ekran,44,14,3
+Xiaomi,Poco X5,batarya,18,4,3
+Xiaomi,Poco X5,sarj,20,4,3
+Xiaomi,Poco X5,arkaCam,16,3,3
+Xiaomi,Poco X5,kamera,24,6,3
+Xiaomi,Poco X5,hoparlor,17,4,3
+Xiaomi,Redmi 14C,ekran,35,11,3
+Xiaomi,Redmi 14C,batarya,15,3,3
+Xiaomi,Redmi 14C,sarj,20,4,3
+Xiaomi,Redmi 14C,arkaCam,13,2,3
+Xiaomi,Redmi 14C,kamera,19,4,3
+Xiaomi,Redmi 14C,hoparlor,17,4,3
+Xiaomi,Redmi 13C,ekran,32,9,3
+Xiaomi,Redmi 13C,batarya,13,2,3
+Xiaomi,Redmi 13C,sarj,20,4,3
+Xiaomi,Redmi 13C,arkaCam,12,2,3
+Xiaomi,Redmi 13C,kamera,18,4,3
+Xiaomi,Redmi 13C,hoparlor,17,4,3
+Huawei,Mate 50,ekran,90,32,3
+Huawei,Mate 50,batarya,38,12,3
+Huawei,Mate 50,sarj,20,4,3
+Huawei,Mate 50,arkaCam,33,10,3
+Huawei,Mate 50,kamera,50,16,3
+Huawei,Mate 50,hoparlor,17,4,3
 Huawei,Mate 20,ekran,61,21,3
 Huawei,Mate 20,batarya,26,7,3
 Huawei,Mate 20,sarj,20,4,3
 Huawei,Mate 20,arkaCam,22,6,3
 Huawei,Mate 20,kamera,34,10,3
 Huawei,Mate 20,hoparlor,17,4,3
+Huawei,P50,ekran,78,27,3
+Huawei,P50,batarya,33,10,3
+Huawei,P50,sarj,20,4,3
+Huawei,P50,arkaCam,28,8,3
+Huawei,P50,kamera,43,14,3
+Huawei,P50,hoparlor,17,4,3
+Huawei,P40,ekran,65,23,3
+Huawei,P40,batarya,27,8,3
+Huawei,P40,sarj,20,4,3
+Huawei,P40,arkaCam,24,6,3
+Huawei,P40,kamera,36,11,3
+Huawei,P40,hoparlor,17,4,3
+Huawei,P30,ekran,52,18,3
+Huawei,P30,batarya,22,6,3
+Huawei,P30,sarj,20,4,3
+Huawei,P30,arkaCam,19,4,3
+Huawei,P30,kamera,29,8,3
+Huawei,P30,hoparlor,17,4,3
+Huawei,nova 13,ekran,74,26,3
+Huawei,nova 13,batarya,31,9,3
+Huawei,nova 13,sarj,20,4,3
+Huawei,nova 13,arkaCam,27,8,3
+Huawei,nova 13,kamera,41,13,3
+Huawei,nova 13,hoparlor,17,4,3
+Huawei,nova 12,ekran,66,23,3
+Huawei,nova 12,batarya,28,8,3
+Huawei,nova 12,sarj,20,4,3
+Huawei,nova 12,arkaCam,24,6,3
+Huawei,nova 12,kamera,36,11,3
+Huawei,nova 12,hoparlor,17,4,3
+Huawei,nova 11,ekran,58,20,3
+Huawei,nova 11,batarya,24,6,3
+Huawei,nova 11,sarj,20,4,3
+Huawei,nova 11,arkaCam,21,5,3
+Huawei,nova 11,kamera,32,9,3
+Huawei,nova 11,hoparlor,17,4,3
+Huawei,nova 9,ekran,48,16,3
+Huawei,nova 9,batarya,20,5,3
+Huawei,nova 9,sarj,20,4,3
+Huawei,nova 9,arkaCam,17,4,3
+Huawei,nova 9,kamera,26,7,3
+Huawei,nova 9,hoparlor,17,4,3
 Huawei,Y9,ekran,33,9,3
 Huawei,Y9,batarya,14,2,3
 Huawei,Y9,sarj,20,4,3
 Huawei,Y9,arkaCam,12,2,3
 Huawei,Y9,kamera,18,4,3
 Huawei,Y9,hoparlor,17,4,3
-Oppo,Reno 7,ekran,50,17,3
-Oppo,Reno 7,batarya,21,5,3
-Oppo,Reno 7,sarj,20,4,3
-Oppo,Reno 7,arkaCam,18,4,3
-Oppo,Reno 7,kamera,27,8,3
-Oppo,Reno 7,hoparlor,17,4,3
+Oppo,Reno 13,ekran,90,32,3
+Oppo,Reno 13,batarya,38,12,3
+Oppo,Reno 13,sarj,20,4,3
+Oppo,Reno 13,arkaCam,33,10,3
+Oppo,Reno 13,kamera,50,16,3
+Oppo,Reno 13,hoparlor,17,4,3
+Oppo,Reno 12,ekran,82,29,3
+Oppo,Reno 12,batarya,34,10,3
+Oppo,Reno 12,sarj,20,4,3
+Oppo,Reno 12,arkaCam,30,9,3
+Oppo,Reno 12,kamera,45,15,3
+Oppo,Reno 12,hoparlor,17,4,3
+Oppo,Reno 11,ekran,74,26,3
+Oppo,Reno 11,batarya,31,9,3
+Oppo,Reno 11,sarj,20,4,3
+Oppo,Reno 11,arkaCam,27,8,3
+Oppo,Reno 11,kamera,41,13,3
+Oppo,Reno 11,hoparlor,17,4,3
+Oppo,Reno 10,ekran,66,23,3
+Oppo,Reno 10,batarya,28,8,3
+Oppo,Reno 10,sarj,20,4,3
+Oppo,Reno 10,arkaCam,24,6,3
+Oppo,Reno 10,kamera,36,11,3
+Oppo,Reno 10,hoparlor,17,4,3
 Oppo,Reno 8,ekran,59,20,3
 Oppo,Reno 8,batarya,25,6,3
 Oppo,Reno 8,sarj,20,4,3
 Oppo,Reno 8,arkaCam,21,5,3
 Oppo,Reno 8,kamera,33,9,3
 Oppo,Reno 8,hoparlor,17,4,3
-Oppo,A76,ekran,39,13,3
-Oppo,A76,batarya,17,3,3
-Oppo,A76,sarj,20,4,3
-Oppo,A76,arkaCam,14,3,3
-Oppo,A76,kamera,22,5,3
-Oppo,A76,hoparlor,17,4,3
+Oppo,Reno 7,ekran,50,17,3
+Oppo,Reno 7,batarya,21,5,3
+Oppo,Reno 7,sarj,20,4,3
+Oppo,Reno 7,arkaCam,18,4,3
+Oppo,Reno 7,kamera,27,8,3
+Oppo,Reno 7,hoparlor,17,4,3
 Oppo,A96,ekran,41,14,3
 Oppo,A96,batarya,17,4,3
 Oppo,A96,sarj,20,4,3
 Oppo,A96,arkaCam,15,3,3
 Oppo,A96,kamera,23,6,3
 Oppo,A96,hoparlor,17,4,3
+Oppo,A79,ekran,50,16,3
+Oppo,A79,batarya,21,5,3
+Oppo,A79,sarj,20,4,3
+Oppo,A79,arkaCam,18,4,3
+Oppo,A79,kamera,28,8,3
+Oppo,A79,hoparlor,17,4,3
+Oppo,A78,ekran,46,15,3
+Oppo,A78,batarya,19,4,3
+Oppo,A78,sarj,20,4,3
+Oppo,A78,arkaCam,17,4,3
+Oppo,A78,kamera,25,7,3
+Oppo,A78,hoparlor,17,4,3
+Oppo,A76,ekran,39,13,3
+Oppo,A76,batarya,17,3,3
+Oppo,A76,sarj,20,4,3
+Oppo,A76,arkaCam,14,3,3
+Oppo,A76,kamera,22,5,3
+Oppo,A76,hoparlor,17,4,3
+Oppo,A58,ekran,42,13,3
+Oppo,A58,batarya,18,4,3
+Oppo,A58,sarj,20,4,3
+Oppo,A58,arkaCam,15,3,3
+Oppo,A58,kamera,23,6,3
+Oppo,A58,hoparlor,17,4,3
+Oppo,A38,ekran,38,12,3
+Oppo,A38,batarya,16,3,3
+Oppo,A38,sarj,20,4,3
+Oppo,A38,arkaCam,14,2,3
+Oppo,A38,kamera,21,5,3
+Oppo,A38,hoparlor,17,4,3
+Oppo,A18,ekran,34,10,3
+Oppo,A18,batarya,14,2,3
+Oppo,A18,sarj,20,4,3
+Oppo,A18,arkaCam,12,2,3
+Oppo,A18,kamera,19,4,3
+Oppo,A18,hoparlor,17,4,3
+General Mobile,GM 25,ekran,52,17,3
+General Mobile,GM 25,batarya,22,6,3
+General Mobile,GM 25,sarj,20,4,3
+General Mobile,GM 25,arkaCam,19,4,3
+General Mobile,GM 25,kamera,29,8,3
+General Mobile,GM 25,hoparlor,17,4,3
+General Mobile,GM 24 Pro,ekran,48,16,3
+General Mobile,GM 24 Pro,batarya,20,5,3
+General Mobile,GM 24 Pro,sarj,20,4,3
+General Mobile,GM 24 Pro,arkaCam,17,4,3
+General Mobile,GM 24 Pro,kamera,26,7,3
+General Mobile,GM 24 Pro,hoparlor,17,4,3
+General Mobile,GM 24,ekran,44,14,3
+General Mobile,GM 24,batarya,18,4,3
+General Mobile,GM 24,sarj,20,4,3
+General Mobile,GM 24,arkaCam,16,3,3
+General Mobile,GM 24,kamera,24,6,3
+General Mobile,GM 24,hoparlor,17,4,3
+General Mobile,GM 23 Pro,ekran,40,13,3
+General Mobile,GM 23 Pro,batarya,17,4,3
+General Mobile,GM 23 Pro,sarj,20,4,3
+General Mobile,GM 23 Pro,arkaCam,14,2,3
+General Mobile,GM 23 Pro,kamera,22,6,3
+General Mobile,GM 23 Pro,hoparlor,17,4,3
+General Mobile,GM 23,ekran,36,11,3
+General Mobile,GM 23,batarya,15,3,3
+General Mobile,GM 23,sarj,20,4,3
+General Mobile,GM 23,arkaCam,13,2,3
+General Mobile,GM 23,kamera,20,5,3
+General Mobile,GM 23,hoparlor,17,4,3
 General Mobile,GM 22 Pro,ekran,33,9,3
 General Mobile,GM 22 Pro,batarya,14,2,3
 General Mobile,GM 22 Pro,sarj,20,4,3
