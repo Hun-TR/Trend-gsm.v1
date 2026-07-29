@@ -479,7 +479,8 @@
 <script>
   const PRICES_CSV_URL='data/prices.csv';
   const RATE_ENDPOINTS=['https://open.er-api.com/v6/latest/USD','https://api.frankfurter.app/latest?from=USD&to=TRY'];
-  const FALLBACK_RATE=34;
+  // Kur servisine ulasilamazsa kullanilir. Son guncelleme: 29.07.2026
+  const FALLBACK_RATE=47.39;
   const ROUND_TO=100;
   const REPAIR_META={
     ekran:["Ekran Değişimi","kırık / dokunmuyor"],
@@ -492,6 +493,7 @@
   const SHOP_ADDRESS='TREND GSM\nİstasyon Mah. 2309. Sk.\nEtimesgut İş Merkezi No: 2E\n06930 Etimesgut / Ankara\nTel: 0541 355 62 78';
   const WA_BASE='https://wa.me/905413556278?text=';
   const tl=n=>n.toLocaleString('tr-TR')+' ₺';
+  const rateStr=n=>n.toLocaleString('tr-TR',{minimumFractionDigits:2,maximumFractionDigits:2});
   const deviceName=(brand,model)=>model.toLowerCase().startsWith(brand.toLowerCase())?model:brand+' '+model;
   let selBrand=null,cart=[];
   let PRICES={},BRAND_ORDER=[],usdToTry=null;
@@ -548,9 +550,9 @@
     const [rateResult,csvResult]=await Promise.allSettled([fetchRate(),fetch(PRICES_CSV_URL).then(r=>r.text())]);
     usdToTry=rateResult.status==='fulfilled'&&rateResult.value?rateResult.value:FALLBACK_RATE;
     if(rateResult.status==='fulfilled'&&rateResult.value){
-      kurInfo.textContent='Güncel kur: 1 USD ≈ '+usdToTry.toFixed(2)+' ₺';
+      kurInfo.textContent='Güncel kur: 1 USD ≈ '+rateStr(usdToTry)+' ₺';
     }else{
-      kurInfo.textContent='Kur bilgisi alınamadı, yaklaşık kur kullanılıyor (1 USD ≈ '+FALLBACK_RATE+' ₺)';
+      kurInfo.textContent='Kur servisine ulaşılamadı, yaklaşık kur kullanılıyor (1 USD ≈ '+rateStr(FALLBACK_RATE)+' ₺). Kesin fiyat için WhatsApp\'tan yaz.';
     }
     let rows=[];
     if(csvResult.status==='fulfilled'){
