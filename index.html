@@ -204,11 +204,21 @@
   .c-map{min-height:440px;background:#22403f}
   .c-map iframe{width:100%;height:100%;border:0;display:block}
   footer{background:var(--ink);color:#8FA3A1;padding:40px 0;border-top:1px solid var(--border-dark)}
-  .fbar{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:14px}
+  .fbar{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:18px}
   .fbar small{font-size:12.5px}
+  .socials{display:flex;gap:10px}
+  .soc{width:40px;height:40px;border-radius:11px;border:1px solid var(--border-dark);display:grid;place-items:center;color:#8FA3A1;transition:color .2s,border-color .2s,background .2s,transform .15s}
+  .soc:hover{transform:translateY(-2px);background:rgba(255,255,255,.05)}
+  .soc:focus-visible{outline:3px solid var(--amber);outline-offset:2px}
+  .soc.yt:hover{color:#FF3D46;border-color:#FF3D46}
+  .soc.wa:hover{color:var(--whatsapp);border-color:var(--whatsapp)}
+  .soc.mp:hover{color:var(--teal);border-color:var(--teal)}
+  .rev-cta{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;margin-top:30px}
+  .btn-yt{background:#FF3D46;color:#fff;box-shadow:0 8px 22px rgba(255,61,70,.28)}
+  .btn-yt:hover{background:#E62B34}
   .mobile-bar{display:none}
-  .toast{position:fixed;left:50%;bottom:26px;transform:translateX(-50%) translateY(140%);background:var(--ink);color:#fff;border:1px solid var(--border-dark);padding:13px 20px;border-radius:13px;font-size:14px;font-weight:500;z-index:200;box-shadow:0 18px 40px rgba(0,0,0,.4);display:flex;align-items:center;gap:10px;transition:transform .35s cubic-bezier(.2,.9,.3,1.2)}
-  .toast.show{transform:translateX(-50%) translateY(0)}
+  .toast{position:fixed;left:50%;bottom:26px;transform:translateX(-50%) translateY(calc(100% + 130px));opacity:0;pointer-events:none;background:var(--ink);color:#fff;border:1px solid var(--border-dark);padding:13px 20px;border-radius:13px;font-size:14px;font-weight:500;z-index:200;box-shadow:0 18px 40px rgba(0,0,0,.4);display:flex;align-items:center;gap:10px;transition:transform .35s cubic-bezier(.2,.9,.3,1.2),opacity .25s}
+  .toast.show{transform:translateX(-50%) translateY(0);opacity:1}
   .toast .dot{width:8px;height:8px;border-radius:50%;background:var(--teal)}
   @media(max-width:920px){
     .menu{display:none}
@@ -392,8 +402,9 @@
       </div>
     </div>
     <div class="rev-grid" id="revGrid" data-reveal></div>
-    <div style="text-align:center;margin-top:30px">
+    <div class="rev-cta">
       <a class="btn btn-line" target="_blank" rel="noopener" href="https://maps.app.goo.gl/NqFehKTkDV8xSHCE8?g_st=ac">Tüm yorumları Google Haritalar'da gör →</a>
+      <a class="btn btn-yt" target="_blank" rel="noopener" href="https://www.youtube.com/@trendgsmankara"><svg width="19" height="19" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M23 12s0-3.9-.5-5.8a3 3 0 0 0-2.1-2.1C18.5 3.6 12 3.6 12 3.6s-6.5 0-8.4.5a3 3 0 0 0-2.1 2.1C1 8.1 1 12 1 12s0 3.9.5 5.8a3 3 0 0 0 2.1 2.1c1.9.5 8.4.5 8.4.5s6.5 0 8.4-.5a3 3 0 0 0 2.1-2.1c.5-1.9.5-5.8.5-5.8ZM9.8 15.6V8.4l6.3 3.6-6.3 3.6Z"/></svg> Tamir videolarımızı izle</a>
     </div>
   </div>
 </section>
@@ -438,6 +449,7 @@
         <div class="cline"><div class="ic"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M12 21s7-6.3 7-12a7 7 0 1 0-14 0c0 5.7 7 12 7 12Z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><circle cx="12" cy="9" r="2.4" stroke="currentColor" stroke-width="1.8"/></svg></div><div><div class="lbl">Adres</div><a class="val" target="_blank" rel="noopener" href="https://maps.app.goo.gl/NqFehKTkDV8xSHCE8">İstasyon Mah. 2309. Sk.<br>Etimesgut İş Merkezi No: 2E<br>06930 Etimesgut / Ankara</a></div></div>
         <div class="cline"><div class="ic"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M5 4h3l2 5-2 1.5a12 12 0 0 0 5.5 5.5L20 14l5 2v3a18 18 0 0 1-17-17Z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round" transform="translate(-2 0)"/></svg></div><div><div class="lbl">Telefon / WhatsApp</div><a href="tel:+905413556278" class="val">0 541 355 62 78</a></div></div>
         <div class="cline"><div class="ic"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="1.8"/><path d="M12 7v5l3 2" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div><div><div class="lbl">Çalışma Saatleri</div><div class="val">Pzt–Cmt 09:00 – 19:00 · Pazar kapalı</div></div></div>
+        <div class="cline"><div class="ic"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M23 12s0-3.9-.5-5.8a3 3 0 0 0-2.1-2.1C18.5 3.6 12 3.6 12 3.6s-6.5 0-8.4.5a3 3 0 0 0-2.1 2.1C1 8.1 1 12 1 12s0 3.9.5 5.8a3 3 0 0 0 2.1 2.1c1.9.5 8.4.5 8.4.5s6.5 0 8.4-.5a3 3 0 0 0 2.1-2.1c.5-1.9.5-5.8.5-5.8ZM9.8 15.6V8.4l6.3 3.6-6.3 3.6Z"/></svg></div><div><div class="lbl">YouTube</div><a href="https://www.youtube.com/@trendgsmankara" target="_blank" rel="noopener" class="val">@trendgsmankara</a></div></div>
         <div class="cbtns"><a href="tel:+905413556278" class="btn btn-primary">Hemen Ara</a><a href="https://wa.me/905413556278?text=Merhaba%2C%20TREND%20GSM%20web%20sitesinden%20yaz%C4%B1yorum." class="btn btn-wa">WhatsApp</a><a href="https://www.google.com/maps/dir/?api=1&destination=39.9481907%2C32.6622677" target="_blank" rel="noopener" class="btn btn-ghost">Yol Tarifi Al</a></div>
       </div>
       <div class="c-map"><iframe title="TREND GSM konumu" loading="lazy" referrerpolicy="no-referrer-when-downgrade" src="https://www.google.com/maps?q=39.9481907,32.6622677&z=17&hl=tr&output=embed"></iframe></div>
@@ -448,6 +460,11 @@
 <footer>
   <div class="wrap fbar">
     <a href="#top" class="logo"><span class="bars"><span></span><span></span><span></span><span></span></span> TREND <b>GSM</b></a>
+    <div class="socials">
+      <a class="soc yt" href="https://www.youtube.com/@trendgsmankara" target="_blank" rel="noopener" aria-label="YouTube kanalımız" title="YouTube"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M23 12s0-3.9-.5-5.8a3 3 0 0 0-2.1-2.1C18.5 3.6 12 3.6 12 3.6s-6.5 0-8.4.5a3 3 0 0 0-2.1 2.1C1 8.1 1 12 1 12s0 3.9.5 5.8a3 3 0 0 0 2.1 2.1c1.9.5 8.4.5 8.4.5s6.5 0 8.4-.5a3 3 0 0 0 2.1-2.1c.5-1.9.5-5.8.5-5.8ZM9.8 15.6V8.4l6.3 3.6-6.3 3.6Z"/></svg></a>
+      <a class="soc wa" href="https://wa.me/905413556278?text=Merhaba%2C%20TREND%20GSM%20web%20sitesinden%20yaz%C4%B1yorum." target="_blank" rel="noopener" aria-label="WhatsApp'tan yaz" title="WhatsApp"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm0 18.1a8.1 8.1 0 0 1-4.1-1.1l-.3-.2-3 .8.8-2.9-.2-.3A8.1 8.1 0 1 1 12 20.1Zm4.5-6c-.2-.1-1.5-.7-1.7-.8s-.4-.1-.6.1l-.8 1c-.1.2-.3.2-.5.1a6.6 6.6 0 0 1-3.3-2.9c-.1-.2 0-.4.1-.5l.4-.5c.1-.2.1-.3 0-.5l-.7-1.8c-.2-.4-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.2 5.2 0 0 0 1.1 2.7 11.4 11.4 0 0 0 4.4 3.9c1.5.6 2.2.7 3 .6a2.5 2.5 0 0 0 1.7-1.2 2 2 0 0 0 .1-1.2c0-.1-.2-.2-.5-.3Z"/></svg></a>
+      <a class="soc mp" href="https://maps.app.goo.gl/NqFehKTkDV8xSHCE8" target="_blank" rel="noopener" aria-label="Google Haritalar'da konumumuz" title="Google Haritalar"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 21s7-6.3 7-12a7 7 0 1 0-14 0c0 5.7 7 12 7 12Z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><circle cx="12" cy="9" r="2.4" stroke="currentColor" stroke-width="1.8"/></svg></a>
+    </div>
     <small>© 2026 TREND GSM · Kargoyla Akıllı Telefon Teknik Servisi · Etimesgut, Ankara</small>
   </div>
 </footer>
